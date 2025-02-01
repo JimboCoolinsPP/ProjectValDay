@@ -8,7 +8,8 @@
         body {
             text-align: center;
             font-family: Arial, sans-serif;
-            background-color: pink;
+            background-image: url('https://i.gifer.com/origin/44/44fb71d24a1891ff3e94fa0dd1f7f689_w200.gif');
+            background-size: cover;
             color: white;
             display: flex;
             flex-direction: column;
@@ -16,6 +17,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            overflow: hidden;
         }
         h1 {
             font-size: 3em;
@@ -40,6 +42,17 @@
             color: red;
             position: absolute;
         }
+        @keyframes float {
+            0% { transform: translateY(100vh); opacity: 1; }
+            100% { transform: translateY(-10vh); opacity: 0; }
+        }
+        .heart {
+            position: absolute;
+            bottom: 0;
+            font-size: 2em;
+            color: red;
+            animation: float 5s infinite ease-in-out;
+        }
     </style>
 </head>
 <body>
@@ -49,10 +62,15 @@
         <button class="no" onmouseover="moveButton(this)">No</button>
     </div>
     <p id="message" style="display:none; font-size: 1.5em; margin-top: 20px;">Yay! You made my day! ❤️</p>
+    <p id="love-letter" style="display:none; font-size: 1.5em; margin-top: 20px;">You make me so happy, and I hope we can share a special Valentine’s Day together! ❤️</p>
+    <p id="countdown" style="font-size: 1.5em; margin-top: 20px;"></p>
+    <div class="heart">❤️</div>
+    <div class="heart" style="left: 50px;">❤️</div>
 
     <script>
         function showMessage() {
             document.getElementById("message").style.display = "block";
+            document.getElementById("love-letter").style.display = "block";
         }
 
         function moveButton(button) {
@@ -61,37 +79,21 @@
             button.style.left = `${x}px`;
             button.style.top = `${y}px`;
         }
+
+        function countdown() {
+            let valentine = new Date("Feb 14, 2025 00:00:00").getTime();
+            let timer = setInterval(function() {
+                let now = new Date().getTime();
+                let timeLeft = valentine - now;
+                let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                document.getElementById("countdown").innerHTML = `Only ${days} days until Valentine's Day! ❤️`;
+                if (timeLeft < 0) {
+                    clearInterval(timer);
+                    document.getElementById("countdown").innerHTML = "Happy Valentine's Day! 💕";
+                }
+            }, 1000);
+        }
+        countdown();
     </script>
 </body>
 </html>
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </head>
-
