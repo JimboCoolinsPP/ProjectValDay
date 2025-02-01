@@ -8,9 +8,9 @@
         body {
             text-align: center;
             font-family: Arial, sans-serif;
-            background-image: url('https://i.gifer.com/origin/44/44fb71d24a1891ff3e94fa0dd1f7f689_w200.gif'), url('https://www.w3schools.com/w3images/roses.jpg');
-            background-size: cover, cover;
-            background-blend-mode: multiply;
+            background-image: url('https://www.publicdomainpictures.net/pictures/320000/velka/red-roses-background.jpg');
+            background-size: cover;
+            background-position: center;
             color: white;
             display: flex;
             flex-direction: column;
@@ -65,7 +65,9 @@
     <p id="message" style="display:none; font-size: 1.5em; margin-top: 20px;">Yay! You made my day! ❤️</p>
     <p id="love-letter" style="display:none; font-size: 1.5em; margin-top: 20px;">You make me so happy, and I hope we can share a special Valentine’s Day together! ❤️</p>
     <p id="countdown" style="font-size: 1.5em; margin-top: 20px;"></p>
-    
+    <div class="heart">❤️</div>
+    <div class="heart" style="left: 50px;">❤️</div>
+
     <script>
         function showMessage() {
             document.getElementById("message").style.display = "block";
@@ -93,22 +95,6 @@
             }, 1000);
         }
         countdown();
-
-        // Function to generate random hearts that float
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.innerHTML = '❤️';
-            heart.style.left = `${Math.random() * 100}vw`; // Random horizontal position
-            heart.style.animationDuration = `${Math.random() * 3 + 4}s`; // Random floating speed
-            heart.style.fontSize = `${Math.random() * 2 + 1}em`; // Random heart size
-            document.body.appendChild(heart);
-
-            // Remove the heart after animation ends
-            setTimeout(() => heart.remove(), 5000);
-        }
-
-        setInterval(createHeart, 500); // Generate new hearts every half second
     </script>
 </body>
 </html>
