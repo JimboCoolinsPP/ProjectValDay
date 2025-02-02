@@ -52,6 +52,16 @@
             color: red;
             animation: float 5s infinite ease-in-out;
         }
+        #love-list-container {
+            display: none;
+            font-size: 1.5em;
+            margin-top: 20px;
+            text-align: center;
+        }
+        #love-list {
+            text-align: left;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -62,6 +72,21 @@
     </div>
     <p id="message" style="display:none; font-size: 1.5em; margin-top: 20px;">Yay! You made my day! ❤️</p>
     <p id="love-letter" style="display:none; font-size: 1.5em; margin-top: 20px;">You make me so happy, and I hope we can share a special Valentine’s Day together! ❤️</p>
+    <div id="love-list-container">
+        <h2>10 Things I Love About You</h2>
+        <ul id="love-list">
+            <li>Her cooking</li>
+            <li>How sweet she can be</li>
+            <li>How she can make me laugh and her cute laugh</li>
+            <li>Her kisses</li>
+            <li>Her hugs</li>
+            <li>Her cuddles</li>
+            <li>Her generosity</li>
+            <li>Her cute smile</li>
+            <li>How good of a mom she is!</li>
+            <li>How she brightens my days</li>
+        </ul>
+    </div>
     <p id="countdown" style="font-size: 1.5em; margin-top: 20px;"></p>
     <div class="heart">❤️</div>
     <div class="heart" style="left: 50px;">❤️</div>
@@ -70,6 +95,7 @@
         function showMessage() {
             document.getElementById("message").style.display = "block";
             document.getElementById("love-letter").style.display = "block";
+            document.getElementById("love-list-container").style.display = "block";
         }
 
         function moveButton(button) {
