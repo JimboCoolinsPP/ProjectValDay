@@ -1,3 +1,5 @@
+
+You said:
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +16,9 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            height: 100vh;
             margin: 0;
-            overflow-y: scroll;
+            overflow: hidden;
         }
         h1 {
             font-size: 3em;
@@ -103,8 +106,8 @@
         function moveButton(button) {
             let x = Math.random() * (window.innerWidth - 100);
             let y = Math.random() * (window.innerHeight - 100);
-            button.style.left = `${x}px`;
-            button.style.top = `${y}px`;
+            button.style.left = ${x}px;
+            button.style.top = ${y}px;
         }
 
         function countdown() {
@@ -113,7 +116,7 @@
                 let now = new Date().getTime();
                 let timeLeft = valentine - now;
                 let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                document.getElementById("countdown").innerHTML = `Only ${days} days until Valentine's Day! ❤️`;
+                document.getElementById("countdown").innerHTML = Only ${days} days until Valentine's Day! ❤️;
                 if (timeLeft < 0) {
                     clearInterval(timer);
                     document.getElementById("countdown").innerHTML = "Happy Valentine's Day! 💕";
